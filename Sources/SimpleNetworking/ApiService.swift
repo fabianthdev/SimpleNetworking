@@ -14,8 +14,7 @@ public protocol ApiService {
 
 public extension ApiService {
     
-    // MARK: Helper
-    internal static func request<T: Decodable>(resource: NetworkResource) async throws -> T {
+    static func request<T: Decodable>(resource: NetworkResource) async throws -> T {
         try await NetworkService.shared.request(resource: resource)
     }
 }
