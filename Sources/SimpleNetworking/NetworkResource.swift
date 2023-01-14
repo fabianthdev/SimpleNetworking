@@ -40,7 +40,7 @@ public extension NetworkResource {
         }
 
         var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = self.httpMethod.rawValue
+        urlRequest.httpMethod = self.httpMethod.rawValue.uppercased()
         urlRequest.allHTTPHeaderFields = self.headers
 
         if self.requiresAuth, let authTokenProvider = NetworkService.shared.authTokenProvider?() {
